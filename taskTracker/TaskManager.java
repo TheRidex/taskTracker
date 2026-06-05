@@ -1,7 +1,16 @@
+import java.util.ArrayList;
+
 public class TaskManager {
 
-    private String addTask;
-    private String viewTask;
-    private String DeleteTask;
-    private boolean completed;
+    ArrayList<String> tasks = new ArrayList<>();
+
+    // addTask;
+    public void addTask(String taskDetails) {
+        tasks.add(taskDetails);
+        System.out.println(tasks.get(0));
+    }
+
+    // viewTask;
+    // DeleteTask;
+    // completed;
 }
