@@ -2,12 +2,13 @@ import java.util.ArrayList;
 
 public class TaskManager {
 
-    ArrayList<String> tasks = new ArrayList<>();
+    ArrayList<String> tasksArray = new ArrayList<>();
 
     // addTask;
-    public void addTask(String taskDetails) {
-        tasks.add(taskDetails);
-        System.out.println(tasks.get(0));
+    public void addTask(String description) {
+        tasksArray.add(description);
+
+        System.out.println(tasksArray.get(0));
     }
 
     // viewTask;

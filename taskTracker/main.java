@@ -8,7 +8,7 @@ public class Main {
         // User menu
         System.out.println("hey user, what would you like to do today?\n" +
                 "Option 1: create a new entry\n" +
-                "Option 2: select a previous entry\n" +
+                "Option 2: display all tasks\n" +
                 "Option 3: exit the program");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
@@ -16,11 +16,17 @@ public class Main {
 
         switch (option) {
             case 1:
-                String taskDetails = scanner.nextLine();
-                taskManager.addTask(taskDetails);
+
+                System.out.println("describe te task:");
+
+                String description = scanner.nextLine();
+                taskManager.addTask(description);
+                Task task = new Task(description);
+
+                System.out.println(task.toString());
                 break;
             case 2:
-
+                System.out.println("");
                 break;
 
             default:

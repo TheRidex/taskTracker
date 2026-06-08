@@ -1,14 +1,16 @@
 public class Task {
     // In this section, the data stored will be saved
+    private static int idCounter;
     private String id;
     private String description;
-    private String complete;
+    private Boolean complete = false;
 
     // Constructor
-    public Task(String id, String description, String complete) {
-        this.id = id;
+    public Task(String description) {
+        // How could I connect the id to the Array id
+        this.id = String.format("%02d", ++idCounter);
         this.description = description;
-        this.complete = complete;
+
     }
     // Getters
 
@@ -20,7 +22,7 @@ public class Task {
         return description;
     }
 
-    public String getComplete() {
+    public Boolean getComplete() {
         return complete;
     }
 
@@ -34,8 +36,13 @@ public class Task {
         this.description = description;
     }
 
-    public void setComplete(String complete) {
+    public void setComplete(Boolean complete) {
         this.complete = complete;
+    }
+
+    @Override
+    public String toString() {
+        return "Task [id=" + id + ", description=" + description + ", complete=" + complete + "]";
     }
 
 }
