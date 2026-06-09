@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Boolean exitCondition = true;
         TaskManager taskManager = new TaskManager();
+        Scanner scanner = new Scanner(System.in);
         // User menu
 
         while (exitCondition) {
@@ -14,7 +15,7 @@ public class Main {
                     "Option 3: exit the program\n" +
                     "Option 4: delete task\n" +
                     "Option 5: find task");
-            Scanner scanner = new Scanner(System.in);
+
             int option = scanner.nextInt();
             scanner.nextLine();
 
