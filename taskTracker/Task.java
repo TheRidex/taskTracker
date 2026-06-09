@@ -3,12 +3,13 @@ public class Task {
     private static int idCounter;
     private String id;
     private String description;
-    private Boolean complete = false;
+    private Boolean complete;
 
     // Constructor
     public Task(String description) {
         // How could I connect the id to the Array id
         this.id = String.format("%02d", ++idCounter);
+        this.complete = false;
         this.description = description;
 
     }
@@ -42,7 +43,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task [id=" + id + ", description=" + description + ", complete=" + complete + "]";
+        return "Task [id= " + id + ", description= " + description + ", completed= " + complete + "]";
     }
 
 }
