@@ -21,8 +21,16 @@ public class TaskManager {
         tasksArray.remove(deleteArrayIndex);
     }
 
-    public void findTask(int taskFinderIndex) {
-        System.out.println(tasksArray.get(taskFinderIndex));
+    public Task findTask(String taskIdFinder) {
+        // System.out.println(tasksArray.get(taskFinderIndex));
+        for (Task task : tasksArray) {
+            if (task.getId().equals(taskIdFinder)) {
+                return task;
+            }
+
+        }
+        return null;
+
     }
 
     public void taskCompleted(int taskFinderIndex) {

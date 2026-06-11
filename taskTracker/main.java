@@ -58,24 +58,24 @@ public class Main {
                     break;
                 case 5:// Find task
                     System.out.println("please enter the tasks id number");
-                    int taskFinderIndex = scanner.nextInt();
-                    scanner.nextLine();
-                    taskFinderIndex--;
-                    if (taskFinderIndex < 0 || taskFinderIndex > taskManager.tasksArray.size()) {
+                    String taskIdFinder = scanner.nextLine();
+                    Task taskIdFinderResult = taskManager.findTask(taskIdFinder);
+                    if (taskIdFinderResult == null) {
 
                         System.out.println("that task does not exist");
 
                     } else {
                         System.out.println("Here's your task");
-                        taskManager.findTask(taskFinderIndex);
+                        System.out.println(taskIdFinderResult);
                         System.err.println("would you like to mark it as completed? (y/n)");
                         String completionCheck = scanner.nextLine();
 
                         if (completionCheck.equals("y") || completionCheck.equals("n")) {
 
                             if (completionCheck.equals("y")) {
-                                taskManager.taskCompleted(taskFinderIndex);
+                                taskIdFinderResult.setComplete(true);
                                 System.out.println("task marked as completed!");
+                                System.out.println(taskIdFinderResult);
                             } else {
                                 System.out.println("lets keep going then");
                             }
