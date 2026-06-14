@@ -67,7 +67,7 @@ public class Main {
                     } else {
                         System.out.println("Here's your task");
                         System.out.println(taskIdFinderResult);
-                        System.err.println("would you like to mark it as completed? (y/n)");
+                        System.err.println("is the task completed? (y/n)");
                         String completionCheck = scanner.nextLine();
 
                         if (completionCheck.equals("y") || completionCheck.equals("n")) {
@@ -77,6 +77,7 @@ public class Main {
                                 System.out.println("task marked as completed!");
                                 System.out.println(taskIdFinderResult);
                             } else {
+                                taskIdFinderResult.setComplete(false);
                                 System.out.println("lets keep going then");
                             }
                         } else {
