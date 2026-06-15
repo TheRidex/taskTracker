@@ -39,20 +39,20 @@ public class Main {
                     exitCondition = false;
                     break;
                 case 4:// Deletes a task
-                    System.out.println("please enter the tasks id number");
-                    int deleteArrayIndex = scanner.nextInt();
-                    scanner.nextLine();
-                    deleteArrayIndex--;
 
-                    if (deleteArrayIndex < 0 || deleteArrayIndex >= taskManager.tasksArray.size()) {
+                    // Input the task number
+                    System.out.println("please enter the tasks id number");
+                    String taskToBeDeleted = scanner.nextLine();
+                    scanner.nextLine();
+
+                    if (taskManager.findTask(taskToBeDeleted) == null) {
 
                         System.out.println("that task does not exist");
 
                     } else {
-                        taskManager.taskDeletion(deleteArrayIndex);
-                        deleteArrayIndex++;
+                        taskManager.taskDeletion(taskToBeDeleted);
 
-                        System.out.println("task " + deleteArrayIndex + " deleted");
+                        System.out.println("task " + taskToBeDeleted + " deleted");
                     }
 
                     break;

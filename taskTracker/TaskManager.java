@@ -17,8 +17,12 @@ public class TaskManager {
         }
     }
 
-    public void taskDeletion(int deleteArrayIndex) {
-        tasksArray.remove(deleteArrayIndex);
+    public void taskDeletion(String taskToBeDeleted) {
+        for (Task task : tasksArray) {
+            if (task.getId().equals(taskToBeDeleted)) {
+                tasksArray.remove(task);
+            }
+        }
     }
 
     public Task findTask(String taskIdFinder) {
