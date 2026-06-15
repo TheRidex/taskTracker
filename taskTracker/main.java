@@ -43,7 +43,6 @@ public class Main {
                     // Input the task number
                     System.out.println("please enter the tasks id number");
                     String taskToBeDeleted = scanner.nextLine();
-                    scanner.nextLine();
 
                     if (taskManager.findTask(taskToBeDeleted) == null) {
 
@@ -59,25 +58,25 @@ public class Main {
                 case 5:// Find task
                     System.out.println("please enter the tasks id number");
                     String taskIdFinder = scanner.nextLine();
-                    Task taskIdFinderResult = taskManager.findTask(taskIdFinder);
-                    if (taskIdFinderResult == null) {
+                    Task IdFinderResult = taskManager.findTask(taskIdFinder);
+                    if (IdFinderResult == null) {
 
                         System.out.println("that task does not exist");
 
                     } else {
                         System.out.println("Here's your task");
-                        System.out.println(taskIdFinderResult);
+                        System.out.println(IdFinderResult);
                         System.err.println("is the task completed? (y/n)");
                         String completionCheck = scanner.nextLine();
 
                         if (completionCheck.equals("y") || completionCheck.equals("n")) {
 
                             if (completionCheck.equals("y")) {
-                                taskIdFinderResult.setComplete(true);
+                                IdFinderResult.setComplete(true);
                                 System.out.println("task marked as completed!");
-                                System.out.println(taskIdFinderResult);
+                                System.out.println(IdFinderResult);
                             } else {
-                                taskIdFinderResult.setComplete(false);
+                                IdFinderResult.setComplete(false);
                                 System.out.println("lets keep going then");
                             }
                         } else {
