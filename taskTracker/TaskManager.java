@@ -17,32 +17,30 @@ public class TaskManager {
         }
     }
 
-    public void taskDeletion(String taskToBeDeleted) {
-        for (Task task : tasksArray) {
-            if (task.getId().equals(taskToBeDeleted)) {
-                tasksArray.remove(task);
-            }
-        }
+    public void taskDeletion(Task DeletionIdFinder) {
+        tasksArray.remove(DeletionIdFinder);
+
     }
 
     public Task findTask(String taskIdFinder) {
-        // System.out.println(tasksArray.get(taskFinderIndex));
+
         for (Task task : tasksArray) {
             if (task.getId().equals(taskIdFinder)) {
                 return task;
             }
-
         }
         return null;
-
     }
 
-    public void taskCompleted(int taskFinderIndex) {
-        Task task = tasksArray.get(taskFinderIndex);
-        task.setComplete(true);
+    public void Completed(Task IdFinderResult) {
+        IdFinderResult.setComplete(true);
     }
 
-    // viewTask;
-    // DeleteTask;
-    // completed;
+    public void notCompleted(Task IdFinderResult) {
+        IdFinderResult.setComplete(false);
+    }
 }
+
+// viewTask;
+// DeleteTask;
+// completed;

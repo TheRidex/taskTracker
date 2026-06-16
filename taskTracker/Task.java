@@ -3,7 +3,7 @@ public class Task {
     private static int idCounter;
     private String id;
     private String description;
-    private Boolean complete;
+    private boolean complete;
 
     // Constructor
     public Task(String description) {
@@ -23,7 +23,7 @@ public class Task {
         return description;
     }
 
-    public Boolean getComplete() {
+    public boolean getComplete() {
         return complete;
     }
 
@@ -43,7 +43,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task [id= " + id + ", description= " + description + ", completed= " + complete + "]";
+        return "Task [id = " + id + ", description = " + description + ", completed = " + complete + "]";
     }
 
 }

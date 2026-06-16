@@ -43,13 +43,13 @@ public class Main {
                     // Input the task number
                     System.out.println("please enter the tasks id number");
                     String taskToBeDeleted = scanner.nextLine();
-
-                    if (taskManager.findTask(taskToBeDeleted) == null) {
+                    Task toDelete = taskManager.findTask(taskToBeDeleted);
+                    if (toDelete == null) {
 
                         System.out.println("that task does not exist");
 
                     } else {
-                        taskManager.taskDeletion(taskToBeDeleted);
+                        taskManager.taskDeletion(toDelete);
 
                         System.out.println("task " + taskToBeDeleted + " deleted");
                     }
@@ -66,17 +66,17 @@ public class Main {
                     } else {
                         System.out.println("Here's your task");
                         System.out.println(IdFinderResult);
-                        System.err.println("is the task completed? (y/n)");
+                        System.out.println("is the task completed? (y/n)");
                         String completionCheck = scanner.nextLine();
 
                         if (completionCheck.equals("y") || completionCheck.equals("n")) {
 
                             if (completionCheck.equals("y")) {
-                                IdFinderResult.setComplete(true);
+                                taskManager.Completed(IdFinderResult);
                                 System.out.println("task marked as completed!");
                                 System.out.println(IdFinderResult);
                             } else {
-                                IdFinderResult.setComplete(false);
+                                taskManager.notCompleted(IdFinderResult);
                                 System.out.println("lets keep going then");
                             }
                         } else {
