@@ -6,6 +6,7 @@ public class Main {
         Boolean exitCondition = true;
         TaskManager taskManager = new TaskManager();
         Scanner scanner = new Scanner(System.in);
+        TaskFileManager taskFileManager = new TaskFileManager();
         // User menu
 
         while (exitCondition) {
@@ -31,6 +32,7 @@ public class Main {
 
                     break;
                 case 2:// Displays all tasks
+
                     System.out.println("here are your tasks");
                     taskManager.displayTasks();
                     break;
@@ -72,11 +74,11 @@ public class Main {
                         if (completionCheck.equals("y") || completionCheck.equals("n")) {
 
                             if (completionCheck.equals("y")) {
-                                taskManager.Completed(IdFinderResult);
+                                taskManager.markCompleted(IdFinderResult);
                                 System.out.println("task marked as completed!");
                                 System.out.println(IdFinderResult);
                             } else {
-                                taskManager.notCompleted(IdFinderResult);
+                                taskManager.markNotCompleted(IdFinderResult);
                                 System.out.println("lets keep going then");
                             }
                         } else {
@@ -89,7 +91,8 @@ public class Main {
 
                     break;
             }
-        }
 
+        }
+        taskFileManager.saveTasks(taskManager.getTasksArray());
     }
 }

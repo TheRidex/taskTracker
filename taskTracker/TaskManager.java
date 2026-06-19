@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class TaskManager {
 
-    ArrayList<Task> tasksArray = new ArrayList<>();
+    private ArrayList<Task> tasksArray = new ArrayList<>();
 
     // addTask;
     public void addTask(String description) {
@@ -32,13 +32,24 @@ public class TaskManager {
         return null;
     }
 
-    public void Completed(Task IdFinderResult) {
+    public void markCompleted(Task IdFinderResult) {
         IdFinderResult.setComplete(true);
     }
 
-    public void notCompleted(Task IdFinderResult) {
+    public void markNotCompleted(Task IdFinderResult) {
         IdFinderResult.setComplete(false);
     }
+
+    public void listOfAllTasks() {
+        for (Task item : tasksArray) {
+            System.out.println(item);
+        }
+    }
+
+    public ArrayList<Task> getTasksArray() {
+        return tasksArray;
+    }
+
 }
 
 // viewTask;
