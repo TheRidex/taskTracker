@@ -1,14 +1,22 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+
         Boolean exitCondition = true;
         TaskManager taskManager = new TaskManager();
         Scanner scanner = new Scanner(System.in);
         TaskFileManager taskFileManager = new TaskFileManager();
-        // User menu
+        ArrayList<Task> loadedTasks = taskFileManager.loadTasks();
 
+        // Reading Tasks from file
+        for (Task t : loadedTasks) {
+            taskManager.addTaskObject(t);
+        }
+        // taskManager.updateIdCounter();
+        // User menu
         while (exitCondition) {
             System.out.println("choose an option\n" +
                     "Option 1: create a new entry\n" +

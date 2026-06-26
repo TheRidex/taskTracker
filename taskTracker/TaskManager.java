@@ -50,6 +50,14 @@ public class TaskManager {
         return tasksArray;
     }
 
+    public void addTaskObject(Task task) {
+        tasksArray.add(task);
+    }
+
+    public void updateIdCounter(Task loadedTasks) {
+        System.out.println(loadedTasks.getId());
+    }
+
 }
 
 // viewTask;
