@@ -19,6 +19,7 @@ public class TaskManager {
 
     public void taskDeletion(Task DeletionIdFinder) {
         tasksArray.remove(DeletionIdFinder);
+        updateIdCounter();
 
     }
 
@@ -54,8 +55,15 @@ public class TaskManager {
         tasksArray.add(task);
     }
 
-    public void updateIdCounter(Task loadedTasks) {
-        System.out.println(loadedTasks.getId());
+    public void updateIdCounter() {
+        int highestId = 0;
+        for (Task item : tasksArray) {
+            int tempId = Integer.parseInt(item.getId());
+            if (tempId >= highestId) {
+                highestId = tempId;
+            }
+        }
+        Task.setIdCounter(highestId);
     }
 
 }

@@ -15,7 +15,7 @@ public class Main {
         for (Task t : loadedTasks) {
             taskManager.addTaskObject(t);
         }
-        // taskManager.updateIdCounter();
+        taskManager.updateIdCounter();
         // User menu
         while (exitCondition) {
             System.out.println("choose an option\n" +

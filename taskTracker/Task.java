@@ -22,6 +22,9 @@ public class Task {
     }
 
     // Getters
+    public static int getIdCounter() {
+        return idCounter;
+    }
 
     public String getId() {
         return id;
@@ -36,6 +39,10 @@ public class Task {
     }
 
     // Setters
+
+    public static void setIdCounter(int idCounter) {
+        Task.idCounter = idCounter;
+    }
 
     public void setId(String id) {
         this.id = id;
