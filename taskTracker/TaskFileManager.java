@@ -49,7 +49,7 @@ public class TaskFileManager {
             }
             writer.close();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            System.out.println("Unable to save your tasks, please check the file and try again");
             e.printStackTrace();
         }
     }

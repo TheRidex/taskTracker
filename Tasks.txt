@@ -1,6 +1,3 @@
 01|buy milk|false
 02|buy bread|false
-03|buy coffee|false
-07|heyo|false
-08|w|false
-09|buy milk|false
+10|eat cereal|false
