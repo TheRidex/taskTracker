@@ -11,11 +11,7 @@ public class Main {
         TaskFileManager taskFileManager = new TaskFileManager();
         ArrayList<Task> loadedTasks = taskFileManager.loadTasks();
 
-        // Reading Tasks from file
-        for (Task t : loadedTasks) {
-            taskManager.addTaskObject(t);
-        }
-        taskManager.updateIdCounter();
+        taskManager.readFromFile(loadedTasks);
         // User menu
         while (exitCondition) {
             System.out.println("choose an option\n" +
@@ -35,8 +31,6 @@ public class Main {
 
                     String description = scanner.nextLine();
                     taskManager.addTask(description);
-
-                    System.out.println("Task added!");
 
                     break;
                 case 2:// Displays all tasks

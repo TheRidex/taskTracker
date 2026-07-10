@@ -6,8 +6,33 @@ public class TaskManager {
 
     // addTask;
     public void addTask(String description) {
-        Task task = new Task(description);
-        tasksArray.add(task);
+        String trimmedDescription = description.trim();
+        int descriptionLength = trimmedDescription.length();
+        boolean emptyDescription = trimmedDescription.isEmpty();
+
+        try {
+
+            if (descriptionLength <= 200 && !emptyDescription) {
+                for (Task item : tasksArray) {
+                    String savedDescription = item.getDescription();
+                    boolean checkNewDescription = trimmedDescription.equalsIgnoreCase(savedDescription);
+
+                    if (checkNewDescription == true) {
+                        throw new IllegalArgumentException(
+                                "descriptions must not repeat themselves, be empty or be more than 200 characters");
+                    }
+                }
+
+            }
+            Task task = new Task(trimmedDescription);
+            tasksArray.add(task);
+            System.out.println("Task added!");
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error : " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("an unexpected error has occured :" + e.getMessage());
+        }
 
     }
 
