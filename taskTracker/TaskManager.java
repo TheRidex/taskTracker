@@ -12,18 +12,24 @@ public class TaskManager {
 
         try {
 
-            if (descriptionLength <= 200 && !emptyDescription) {
-                for (Task item : tasksArray) {
-                    String savedDescription = item.getDescription();
-                    boolean checkNewDescription = trimmedDescription.equalsIgnoreCase(savedDescription);
-
-                    if (checkNewDescription == true) {
-                        throw new IllegalArgumentException(
-                                "descriptions must not repeat themselves, be empty or be more than 200 characters");
-                    }
-                }
-
+            if (descriptionLength >= 200) {
+                throw new IllegalArgumentException(
+                        "descriptions must not be more than 200 characters");
             }
+            if (emptyDescription) {
+                throw new IllegalArgumentException(
+                        "descriptions must not be empty");
+            }
+            for (Task item : tasksArray) {
+                String savedDescription = item.getDescription();
+                boolean checkNewDescription = trimmedDescription.equalsIgnoreCase(savedDescription);
+
+                if (checkNewDescription) {
+                    throw new IllegalArgumentException(
+                            "there cannot be duplicate descriptions");
+                }
+            }
+
             Task task = new Task(trimmedDescription);
             tasksArray.add(task);
             System.out.println("Task added!");
